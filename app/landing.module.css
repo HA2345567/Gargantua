@@ -1,0 +1,260 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #050606;
+  color: #f4f4f2;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.backgroundVideo,
+.backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundVideo {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center center;
+  background: #050606;
+}
+
+.backdrop {
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.12) 55%, rgba(0,0,0,.2) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.48) 0%, transparent 34%, transparent 62%, rgba(0,0,0,.36) 100%);
+}
+
+.header {
+  position: absolute;
+  z-index: 3;
+  top: 13px;
+  right: 20px;
+  left: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  width: 86px;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  color: #f4f4f2;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  width: 48px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 17px;
+  padding-top: 5px;
+}
+
+.socialMark {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  color: #f4f4f2;
+}
+
+.socialMark svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.waitlist {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.waitlist svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.hero {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 7%;
+  left: 20px;
+}
+
+.heroCopy {
+  max-width: 540px;
+}
+
+.hero h1 {
+  color: #f6f6f3;
+  font-size: clamp(33px, 3.4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -.065em;
+  line-height: .94;
+}
+
+.hero p {
+  margin-top: 11px;
+  color: rgba(241,241,238,.78);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+
+.cta {
+  display: inline-flex;
+  min-width: 131px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 17px;
+  border-radius: 999px;
+  background: #f5f5f2;
+  color: #151515;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  background: #fff;
+}
+
+.poweredBy {
+  position: absolute;
+  z-index: 2;
+  right: 25px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.poweredLabel {
+  color: rgba(240,240,238,.58);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.solana {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f4f4f2;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.solanaLogo {
+  display: block;
+  width: 24px;
+  height: 23px;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .header {
+    right: 16px;
+    left: 16px;
+    gap: 10px;
+  }
+
+  .brand {
+    width: 76px;
+    font-size: 13px;
+  }
+
+  .logo {
+    width: 44px;
+    height: 32px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 2px;
+  }
+
+  .hero {
+    right: 18px;
+    bottom: 4%;
+    left: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(33px, 7.2vw, 46px);
+  }
+
+  .hero p {
+    max-width: 330px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .poweredBy {
+    right: 18px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav {
+    max-width: 280px;
+    column-gap: 11px;
+  }
+
+  .hero {
+    bottom: 4%;
+  }
+
+  .hero h1 {
+    font-size: 33px;
+  }
+
+  .poweredBy {
+    bottom: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta { transition: none; }
+}

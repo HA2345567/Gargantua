@@ -1,0 +1,16 @@
+[toolchain]
+anchor_version = "0.30.1"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+gargantua_escrow = "Fg6PaFpoGXkYsidMpWxTWqkZ6W2BeZ7FEfcYkgMQhg5"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[workspace]
+members = ["programs/gargantua-escrow"]

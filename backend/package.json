@@ -1,0 +1,35 @@
+{
+  "name": "gargantua-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx src/index.ts",
+    "start": "node --env-file-if-exists=.env dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test --test-concurrency=1 tests/core.test.ts tests/foundation.test.ts tests/integration.test.ts",
+    "check:venues": "node --import tsx scripts/check-live-venues.ts",
+    "check:resolutions": "node --import tsx scripts/check-live-resolutions.ts",
+    "check:live-core": "node --import tsx scripts/check-live-core.ts",
+    "migrate": "node --env-file-if-exists=.env --import tsx src/migrate.ts"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.99.0",
+    "@fastify/cors": "^10.1.0",
+    "fastify": "^5.3.0",
+    "pg": "^8.16.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "@electric-sql/pglite-socket": "^0.2.11",
+    "@types/node": "^22.15.0",
+    "@types/pg": "^8.15.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

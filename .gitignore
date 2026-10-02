@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.pnpm-store/
+.bun-tmp/
+target/
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
